@@ -1,0 +1,186 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="text-gray-700 body-font border-b border-gray-200">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="#" target="_blank">
+            
+            <img src="{% static 'images/web.svg' %}" class="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" alt="">
+            <span class="ml-3 text-xl">
+              
+            </span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+
+            <a href="{% url 'home' %}" class="mr-5 hover:text-gray-900">Home</a>
+          
+            <a href="{% url 'Model' %}" class="mr-5 hover:text-gray-900">Cyber Attack Model</a>
+            
+            
+          </nav>
+          {% if user.is_authenticated %}
+          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"><a href="{% url 'logout' %}">Logout</a> 
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          {% endif %}
+        </div>
+      </header>
+      <center><h1 class="text-4xl text-red-800">Attack Type</h1></center>
+      {% if prediction_text == 'Brute_Force' %}
+            <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+                <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+                <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://www.360logica.com/blog/wp-content/uploads/2019/04/Brute-Force-Attack.png)"></div>
+                <div class="flex flex-col w-full md:flex-row">
+                    <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                        <div class="md:text-3xl">Cyber attacks</div>
+                        
+                    </div>
+                    <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                        <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }} attack</h1>
+                        <p class="leading-normal text-red-600">What is Brute Force?</p>
+                        <p class="leading-normal">Brute Force is a cyber attack method where an attacker systematically tries every possible combination of passwords or encryption keys to gain unauthorized access to a system or account</p>
+                        <p class="leading-normal text-red-600 ">How to Prevent?</p>
+                        <p class="leading-normal">To prevent Brute Force attacks, implement strong password policies, employ account lockout mechanisms after repeated failed login attempts, and use multi-factor authentication (MFA) to add an extra layer of security.</p>
+                        <p class="leading-normal text-red-600 ">What are the Causes?</p>
+                        <p class="leading-normal">Brute Force attacks occur due to weak or easily guessable passwords, absence of lockout mechanisms, and vulnerable login interfaces. Attackers also employ tools and scripts to automate the process</p>
+                        <p class="leading-normal text-red-600">What are the Impact?</p>
+                        <p class="leading-normal ">These attacks can lead to unauthorized access, data breaches, and compromised systems. They can also result in service disruptions and financial losses.</p>
+                        <p class="leading-normal text-red-600">What are the Mitigation</p>
+                        <p class="leading-normal">Regularly monitor and analyze login attempts, employ intrusion detection systems, and keep software up-to-date to patch vulnerabilities that attackers might exploit for Brute Force attacks.</p>            
+                    </div>
+                </div>
+            </div>
+            </div>
+        {% elif prediction_text == 'HTTP_DDoS'%}
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://cf-assets.www.cloudflare.com/slt3lc6tev37/3jlyZeWRy9eBz3tyEk9mxA/96eab064524495e8f6b2647f1f7b9d60/application_layer_ddos_example.png)"></div>
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                    <div class="md:text-3xl">Cyber attacks</div>
+                
+                </div>
+                <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }} attack</h1>
+                    <p class="leading-normal text-red-600">What is HTTP DDoS?</p>
+                    <p class="leading-normal">HTTP DDoS stands for "Hypertext Transfer Protocol Distributed Denial of Service." It's a type of cyberattack where multiple compromised devices are used to flood a web server with an overwhelming volume of HTTP requests, causing it to become inaccessible to legitimate users.</p>
+                    <p class="leading-normal text-red-600 ">How to Prevent?</p>
+                    <p class="leading-normal">Preventing HTTP DDoS attacks involves implementing robust security measures, such as using a Web Application Firewall (WAF) to filter malicious traffic, rate limiting or throttling incoming requests, and employing traffic analysis tools to detect anomalies and traffic spikes.</p>
+                    <p class="leading-normal text-red-600 ">What are the Causes?</p>
+                    <p class="leading-normal">HTTP DDoS attacks can be caused by various factors, including botnets, which are networks of compromised devices controlled by attackers, and vulnerabilities in web applications that can be exploited to initiate the attack. Attack motivations vary, from financial gain to political or ideological reasons.</p>
+                    <p class="leading-normal text-red-600">What are the Impact?</p>
+                    <p class="leading-normal ">These attacks can disrupt online services, leading to downtime, financial losses, and damage to a company's reputation. Timely detection and mitigation are crucial to minimize the impact of HTTP DDoS attacks.</p>
+                    <p class="leading-normal text-red-600">What are the Mitigation</p>
+                    <p class="leading-normal">Effective mitigation strategies for HTTP DDoS attacks include using Content Delivery Networks (CDNs) to distribute traffic, employing intrusion detection systems to identify and block malicious traffic, and having a well-defined incident response plan in place.</p>            
+                </div>
+            </div>
+        </div>
+        </div>
+        {% elif prediction_text == 'ICMP_Flood'%}
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://www.akamai.com/site/en/images/article/2022/what-is-an-icmp-flood-attack-image.png)"></div>
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                    <div class="md:text-3xl">Cyber attacks</div>
+                    
+                </div>
+                <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }} attack</h1>
+                    <p class="leading-normal text-red-600">What is ICMP Flood Attack?</p>
+                    <p class="leading-normal">ICMP (Internet Control Message Protocol) Flood is a type of network-based DDoS (Distributed Denial of Service) attack. Attackers flood a target server with a high volume of ICMP Echo Request (ping) packets, overwhelming the network and server resources.</p>
+                    <p class="leading-normal text-red-600 ">How to Prevent?</p>
+                    <p class="leading-normal"> To mitigate ICMP Flood attacks, network administrators can employ firewall rules or intrusion detection/prevention systems to filter and limit incoming ICMP traffic. Rate limiting ICMP requests and implementing anti-DDoS solutions can also help.</p>
+                    <p class="leading-normal text-red-600 ">What are the Causes?</p>
+                    <p class="leading-normal"> ICMP Flood attacks are typically caused by malicious actors or botnets aiming to disrupt services, create network congestion, or exhaust server resources. They exploit the stateless nature of the ICMP protocol.</p>
+                    <p class="leading-normal text-red-600">What are the Impact?</p>
+                    <p class="leading-normal ">These attacks can lead to unauthorized access, data breaches, and compromised systems. They can also result in service disruptions and financial losses.</p>
+                               
+                </div>
+            </div>
+        </div>
+        </div>
+        {% elif prediction_text == 'Normal'%}
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxVnA-2t7FpNEMgzyfxiXvhIHTuBx31TNqYhkhgDSlcpPlXoOl16KV9xG6fUGQxpC6hVs&usqp=CAU)"></div>
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                    <div class="md:text-3xl">Cyber attacks</div>
+                    
+                </div>
+                <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }}</h1>
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-green-500">Don't Worry You are safe</h1>
+                                
+                </div>
+            </div>
+        </div>
+        </div>
+        {% elif prediction_text == 'Port_Scan'%}
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20220906112959/white.jpg)"></div>
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                    <div class="md:text-3xl">Cyber Attacks</div>
+                    
+                </div>
+                <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }} attack</h1>
+                    <p class="leading-normal text-red-600">What is Port Scan?</p>
+                    <p class="leading-normal">A Port Scan is a cyber attack technique where an attacker scans a target computer or network for open ports, which are entry points for network services, to identify potential vulnerabilities.</p>
+                    <p class="leading-normal text-red-600 ">How to Prevent?</p>
+                    <p class="leading-normal">To prevent Port Scan attacks, network administrators can employ security measures such as firewalls, intrusion detection systems, and intrusion prevention systems to monitor and block suspicious scan attempts. Additionally, regularly updating and patching software can help close known vulnerabilities.</p>
+                    <p class="leading-normal text-red-600 ">What are the Causes?</p>
+                    <p class="leading-normal">Port Scans can be carried out for various reasons, including reconnaissance to identify weak points, preparation for more significant attacks, or as part of a security assessment. Attackers may also use Port Scanning to map network topologies and services.</p>
+                                
+                </div>
+            </div>
+        </div>
+        </div>
+        {% elif prediction_text == 'Web_Crwling'%}
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BXnP9hMaFALI3-A07EyLsDmCDvlQwiZwHnKIapzmbahjUJaVyv7LUu4zFroVw4NKi2s&usqp=CAU)"></div>
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                    
+                    <div class="md:text-6xl">Cyber Attacks</div>
+                    
+                </div>
+                <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">This is a {{ prediction_text }} attack</h1>
+                    <p class="leading-normal text-red-600">What is Web Crawling?</p>
+                    <p class="leading-normal">Web crawling, also known as web scraping, is the automated process of extracting data from websites using bots or scripts. While legitimate web crawlers index content for search engines, malicious ones can scrape sensitive information without permission.</p>
+                    <p class="leading-normal text-red-600 ">How to Prevent?</p>
+                    <p class="leading-normal">To defend against web crawling attacks, implement security measures like CAPTCHA challenges, rate limiting, and user-agent verification. These mechanisms can help identify and block automated bots</p>
+                    <p class="leading-normal text-red-600 ">What are the Causes?</p>
+                    <p class="leading-normal">Web crawling attacks can be initiated for various reasons, including data theft, competitive intelligence, price monitoring, and content duplication. Attackers may seek valuable information or gain a competitive advantage.</p>
+                    <p class="leading-normal text-red-600">What are the Impact?</p>
+                    <p class="leading-normal ">These attacks can strain server resources, slow down websites, and potentially compromise user privacy by collecting personal data without consent. They can also lead to intellectual property theft and undermine a site's integrity.</p>
+                    <p class="leading-normal text-red-600">What are the Legal and Ethical Considerations?</p>
+                    <p class="leading-normal"> Web crawling should always adhere to legal and ethical guidelines. Ensure compliance with the website's terms of service and relevant data protection laws, such as GDPR or CCPA, to avoid legal repercussions.</p>            
+                </div>
+            </div>
+        </div>
+        </div>
+        {% endif %}
+   
+    
+</body>
+</html>

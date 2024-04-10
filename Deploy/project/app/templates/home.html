@@ -1,0 +1,133 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-200">
+    <header class="text-gray-700 body-font border-b border-gray-200">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="#" target="_blank">
+            
+            <img src="{% static 'images/web.svg' %}" class="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" alt="">
+            <span class="ml-3 text-xl">Cyber Security</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="{% url 'home' %}" class="mr-5 hover:text-gray-900">Home</a>
+            <a href="{% url 'Model' %}" class="mr-5 hover:text-gray-900">Cyber Attack Model</a>
+            
+            
+          </nav>
+          {% if user.is_authenticated %}
+          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"><a href="{% url 'logout' %}">Logout</a> 
+           
+          </button>
+          {% endif %}
+        </div>
+      </header>
+      <section class="text-gray-700 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Cyber attack 
+              <br class="hidden lg:inline-block">Prediction
+            </h1>
+            <p class="mb-8 leading-relaxed">   
+            
+
+In the digital age, cyber threats loom like shadows in the virtual realm, driven by a potent trifecta of motives: greed, curiosity, and malice. Hackers, be they profit-driven cybercriminals, inquisitive hackers seeking knowledge, or malicious actors bent on chaos, exploit vulnerabilities in our interconnected world. Understanding these diverse motives is essential in fortifying our defenses against the ever-evolving landscape of cyber dangers.
+              
+            
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" alt="hero" src="https://img.freepik.com/free-vector/cyber-security-concept_23-2148532223.jpg?w=2000">
+          </div>
+        </div>
+      </section>
+     
+      <section class="text-gray-700 body-font border-t border-gray-200">
+        
+
+        <p class="mb-8 leading-relaxed"> 
+          
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Why</h2>
+                <p class="leading-relaxed text-base">Cybersecurity is essential to protect sensitive data, critical infrastructure, and personal privacy in an increasingly digital world. It helps prevent financial losses, reputational damage, and potential harm to individuals.</p>
+                
+              </div>
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+              
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">How</h2>
+                <p class="leading-relaxed text-base"> Cybersecurity is implemented through a combination of technologies, processes, and best practices. This includes firewalls, encryption, intrusion detection systems, security policies, employee training, and ongoing monitoring.</p>
+                
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">When</h2>
+                <p class="leading-relaxed text-base"> Cybersecurity is a continuous effort because cyber threats evolve constantly. It's crucial to be proactive in identifying vulnerabilities and responding to incidents promptly.</p>
+                
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">What</h2>
+                <p class="leading-relaxed text-base"> The cybersecurity domain encompasses a wide range of activities, from threat analysis and risk assessment to incident response and recovery. It also involves securing networks, devices, software, and cloud-based services.</p>
+               
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+      <section class="text-gray-700 body-font border-t border-gray-200">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.</p>
+          </div>
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="{% static 'images/113220031021_Balaji.S_photo.svg' %}">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Balaji S</h2>
+                  <p class="text-gray-500">Algorithm Building</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84/edf2f7/a5afbd">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Krish Kumar Gupta</h2>
+                  <p class="text-gray-500">Backend Development and Integration</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88/edf2f7/a5afbd">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Pradnesh S</h2>
+                  <p class="text-gray-500">Algorithm Building</p>
+                </div>
+              </div>
+            </div>
+            
+      </section>
+      
+      <section class="text-gray-700 body-font relative">
+        <div class="absolute inset-0 bg-gray-300">
+          <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+        </div>
+        
+      </section>
+       
+      </footer>
+      
+    {% block content %} {% endblock %}
+</body>
+</html>

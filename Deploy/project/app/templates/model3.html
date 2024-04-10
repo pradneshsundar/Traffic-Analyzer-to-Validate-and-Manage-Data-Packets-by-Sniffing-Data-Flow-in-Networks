@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="bg-gray-100 mx-auto max-w-6xl bg-white py-20 px-12 lg:px-24 shadow-xl mb-24">
+      <form method="POST" action="{% url 'Model' %}">
+        {% csrf_token %}
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+          <center><h1 class="text-6xl py-6 text-blue-300">Cyber Attack Model</h1></center>
+          <div class="-mx-3 md:flex mb-6">
+            
+            <div class="md:w-1/2 px-3 mb-6 ">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Flow Duration</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Flow Duration'" type="number" required placeholder="Please enter your Flow Duration value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Tot Fwd Pkts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Tot Fwd Pkts'" step="0.01" id="company" type="number" required placeholder="Please enter your Tot Fwd Pkts value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Tot Bwd Pkts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Tot Bwd Pkts'" step="0.01" id="company" required type="number" placeholder="Please enter your Tot Bwd Pkts value">
+              
+                           
+            </div>
+            
+            <div class="md:w-1/2 px-3">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Bwd Pkt Len Std</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" name="'Bwd Pkt Len Std'" step="0.01" type="number" required placeholder="Please enter Bwd Pkt Len Std value">
+
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Flow Pkts/s</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="number" step="0.01" name="'Flow Pkts/s'" required placeholder="Please enter Flow Pkts/s value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Flow IAT Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" name="'Flow IAT Mean'" step="0.01" type="number" required placeholder="Please enter Flow IAT Mean value">
+
+              
+            </div>
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Fwd IAT Tot</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Fwd IAT Tot'" type="number" required placeholder="Please enter your Fwd IAT Tot value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Fwd IAT Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Fwd IAT Mean'" step="0.01" id="company" type="number" required placeholder="Please enter your 'Fwd IAT Mean' value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Bwd IAT Tot</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Bwd IAT Tot'" step="0.01" id="company" required type="number" placeholder="Please enter your Bwd IAT Tot value">
+              
+                           
+            </div>
+            
+          </div>
+          <div class="-mx-3 md:flex mb-6">
+            
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Bwd IAT Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Bwd IAT Mean'" type="number" required placeholder="Please enter your Bwd IAT Mean value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Fwd Header Len</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Fwd Header Len'" step="0.01" id="company" type="number" required placeholder="Please enter your Fwd Header Len value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Bwd Header Len</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Bwd Header Len'" step="0.01" id="company" required type="number" placeholder="Please enter your Bwd Header Len value">
+              
+                           
+            </div>
+            
+            <div class="md:w-1/2 px-3">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Fwd Pkts/s</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" name="'Fwd Pkts/s'" step="0.01" type="number" required placeholder="Please enter Fwd Pkts/s value">
+
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Bwd Pkts/s</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="number" step="0.01" name="'Bwd Pkts/s'" required placeholder="Please enter 'Bwd Pkts/s' value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Pkt Len Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" name="'Pkt Len Mean'" step="0.01" type="number" required placeholder="Please enter Pkt Len Mean value">
+              
+            </div>
+
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">SYN Flag Cnt</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'SYN Flag Cnt'" type="number" required placeholder="Please enter your SYN Flag Cnt value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">ECE Flag Cnt</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'ECE Flag Cnt'" step="0.01" id="company" type="number" required placeholder="Please enter your ECE Flag Cnt degree value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Down/Up Ratio</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Down/Up Ratio'" step="0.01" id="company" required type="number" placeholder="Please enter your Down/Up Ratio value">
+              
+                           
+            </div>
+            
+          </div>
+          
+          <div class="-mx-3 md:flex mb-6">
+            
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Pkt Size Avg</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Pkt Size Avg'" type="number" required placeholder="Please enter your Pkt Size Avg value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Fwd Seg Size Avg</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Fwd Seg Size Avg'" step="0.01" id="company" type="number" required placeholder="Please enter your Fwd Seg Size Avg value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Bwd Seg Size Avg</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Bwd Seg Size Avg'" step="0.01" id="company" required type="number" placeholder="Please enter your Bwd Seg Size Avg value">
+              
+                           
+            </div>
+            
+            <div class="md:w-1/2 px-3">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Subflow Fwd Pkts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" name="'Subflow Fwd Pkts'" step="0.01" type="number" required placeholder="Please enter Subflow Fwd Pkts value">
+
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Subflow Fwd Byts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="number" step="0.01" name="'Subflow Fwd Byts'" required placeholder="Please enter Subflow Fwd Byts value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Subflow Bwd Pkts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" name="'Subflow Bwd Pkts'" step="0.01" type="number" required placeholder="Please enter wind speed value">
+
+              
+            </div>
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Subflow Bwd Byts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Subflow Bwd Byts'" type="number" required placeholder="Please enter your Subflow Bwd Byts value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Init Bwd Win Byts</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Init Bwd Win Byts'" step="0.01" id="company" type="number" required placeholder="Please enter your Init Bwd Win Byts value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">'Fwd Act Data Pkts'</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Fwd Act Data Pkts'" step="0.01" id="company" required type="number" placeholder="Please enter your Fwd Act Data Pkts value">  
+                           
+            </div>
+            
+          </div>
+          <div class="-mx-3 md:flex mb-6">
+            
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Active Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Active Mean'" type="number" required placeholder="Please enter your Active Mean value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Active Std</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Active Std'" step="0.01" id="company" type="number" required placeholder="Please enter your Active Std value ">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Active Max</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" name="'Active Max'" step="0.01" id="company" required type="number" placeholder="Please enter your Active Max value">
+              
+                           
+            </div>
+            
+            <div class="md:w-1/2 px-3">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Active Min</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" name="'Active Min'" step="0.01" type="number" required placeholder="Please enter Active Min value">
+
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Idle Mean</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="number" step="0.01" name="'Idle Mean'" required placeholder="Please enter Idle Mean value">
+
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">Idle Max</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" name="'Idle Max'" step="0.01" type="number" required placeholder="Please enter Idle Max value">
+
+              
+            </div>
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">Idle Min</label>
+              <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" step="0.01" name="'Idle Min'" type="number" required placeholder="Please enter your Idle Min value">
+
+              
+                           
+            </div>
+            
+          </div>
+          
+          
+          
+          <div class="-mx-3 md:flex mt-2">
+            <div class="md:w-full px-3">
+              <button class="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full">
+                Submit
+              </button>
+            </div>
+          </div>
+          <h1>{{ prediction_text }}</h1>
+        </div>
+      </form>
+      
+    </div>
+    
+  </body>
+{% endblock content %}
